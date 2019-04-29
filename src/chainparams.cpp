@@ -45,7 +45,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "LINC is not a coin // 2018-04-24 // NEW TIME STAMP ON THE WAY, ULTRA SPECIAL";
+    const char* pszTimestamp = "LINC is not a coin // 2018-04-24";
     const CScript genesisOutputScript = CScript() << ParseHex("048fb16fbd075e50edecec80589e3dddb74fe6433001a3ffbc894403b61279a5270edfa49aa7c12320a9da173331412f226f32bcd01802d5e9b40b15d0e3c894f3") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -173,14 +173,19 @@ public:
 			(  172180, uint256S("0x0000000d1c2d07c4ebe57cdab7554309bcf503340c42e1aed75b705764f1b3b3"))
 			(  172190, uint256S("0x0000009b803acf6ceb1730476e3fa7404c192e1b0a45647f5d678579d0c9b36c"))
 			(  172200, uint256S("0x000000bb3a7615d8d14e0e6320aad51165f1b8e16136e1f253969aa2cdbb1e0f"))
-			(  172281, uint256S("0x00000003ccc29b25c7e172eee5a77ec2e1fa56015d94eb0b470081ffeb5ded32")),
-            1548448588, // * UNIX timestamp of last checkpoint block
-            195487,    // * total number of transactions between genesis and last checkpoint
+			(  172281, uint256S("0x00000003ccc29b25c7e172eee5a77ec2e1fa56015d94eb0b470081ffeb5ded32"))
+			(  209645, uint256S("0x00000000ea62bd8762a622b385cbaf49b82f8ab0fa00c7b1757ed2536e3e317f"))
+			(  209646, uint256S("0x00000000ce233ba034aa43609c84b7c718b94697486f521e7868ca3f1b7aa66b"))
+			(  209647, uint256S("0x000000008d62b01736f3a3459a76942f5d810ba3748fd5ca095d86281c98754f"))
+			(  209648, uint256S("0x00000000825a1c0e40839a761e3ea2cc5e26a91233d2865bd801c6f250b4c612"))
+			(  214607, uint256S("0x00000000f95f58f96ed8e0d96042dfe23ff152c8b2513a26da6d897c1cfeebb7")),
+            1556452564, // * UNIX timestamp of last checkpoint block
+            242490,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             1500        // * estimated number of transactions per day after checkpoint
         };
 
-/*
+
         registeredPools = boost::assign::map_list_of
         (0,     std::set<std::string>() )
         (25200, boost::assign::list_of<std::string> 
@@ -191,7 +196,7 @@ public:
                     ("LPeebZHVdKpVJcLZEJqYzTAf3hV6PDqJ3f")  // BSOD
                     ("LiHjnMV83HpFfD3DzjCU9bdkV3SboR3cyt")  // WeekendPool
                 .convert_to_container<std::set<std::string> >()  );
-*/
+
     }
 };
 static CMainParams mainParams;
@@ -299,10 +304,10 @@ public:
             0         // * estimated number of transactions per day after checkpoint
         };
 
-/*
+
         registeredPools = boost::assign::map_list_of
         (0,     boost::assign::list_of<std::string> ("").convert_to_container<std::set<std::string> >());
-*/
+
     }
 };
 static CTestNetParams testNetParams;
@@ -384,10 +389,10 @@ public:
             0,
             0
         };
-/*
+
         registeredPools = boost::assign::map_list_of
         (0,     boost::assign::list_of<std::string> ("").convert_to_container<std::set<std::string> >());
-*/
+
 	        // Regtest LINC addresses start with 'r'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,122);
         // Regtest LINC script addresses start with '8' or '9'
