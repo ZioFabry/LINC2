@@ -196,7 +196,6 @@ public:
                     ("LPeebZHVdKpVJcLZEJqYzTAf3hV6PDqJ3f")  // BSOD
                     ("LiHjnMV83HpFfD3DzjCU9bdkV3SboR3cyt")  // WeekendPool
                 .convert_to_container<std::set<std::string> >()  );
-
     }
 };
 static CMainParams mainParams;
@@ -306,8 +305,7 @@ public:
 
 
         registeredPools = boost::assign::map_list_of
-        (0,     boost::assign::list_of<std::string> ("").convert_to_container<std::set<std::string> >());
-
+        (0,     std::set<std::string>());
     }
 };
 static CTestNetParams testNetParams;
@@ -391,7 +389,7 @@ public:
         };
 
         registeredPools = boost::assign::map_list_of
-        (0,     boost::assign::list_of<std::string> ("").convert_to_container<std::set<std::string> >());
+        (0,     std::set<std::string>());
 
 	        // Regtest LINC addresses start with 'r'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,122);
