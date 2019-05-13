@@ -186,16 +186,17 @@ public:
         };
 
 
-        registeredPools = boost::assign::map_list_of
-        (0,     std::set<std::string>() )
-        (25200, boost::assign::list_of<std::string> 
+        registeredPools = (MapRegisteredPools) {
+            {0,     std::set<std::string>() },
+            {25200, boost::assign::list_of
                     ("LNg5rEQFKTDPzcFMJjZPyygPis1q8s6AYT")  // LINC
                     ("LPvR4Hjs2KT5NCBD5fATCxuY2n9Pd7yRMu")  // Saltpool
                     ("LKaYw79j6j7ZKRp2HmgLAUdpafsjJ9hFUh")  // Hash4life
                     ("LcByXiuQnAn55zAFTSUzmjysZXzUH3uX1P")  // FairMine
                     ("LPeebZHVdKpVJcLZEJqYzTAf3hV6PDqJ3f")  // BSOD
                     ("LiHjnMV83HpFfD3DzjCU9bdkV3SboR3cyt")  // WeekendPool
-                .convert_to_container<std::set<std::string> >()  );
+                    .convert_to_container<std::set<std::string>>()  }
+        };
     }
 };
 static CMainParams mainParams;
@@ -304,8 +305,9 @@ public:
         };
 
 
-        registeredPools = boost::assign::map_list_of
-        (0,     std::set<std::string>());
+        registeredPools = (MapRegisteredPools) {
+            {0,     std::set<std::string>() }
+        };
     }
 };
 static CTestNetParams testNetParams;
@@ -388,8 +390,9 @@ public:
             0
         };
 
-        registeredPools = boost::assign::map_list_of
-        (0,     std::set<std::string>());
+        registeredPools = (MapRegisteredPools) {
+            {0,     std::set<std::string>() }
+        };
 
 	        // Regtest LINC addresses start with 'r'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,122);
